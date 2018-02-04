@@ -49,39 +49,39 @@ Starting from binary numbers they can be simplified by using a different represe
 
 The advantages of using this representation allow to reduce a lot complexity in case we want to perform multiplication since it becomes just a series of sums properly shifted. This idea can be exploited to obtain adders based on this algorithm
 
-\subsection{Booth algorithm}
-Two consecutive digits are analyzed at the same time, in particular we notice that:
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
-  \hline
-  $x_i$&  $x_{i+1}$&  What they represent&  Operation to be performed\\
-  \hline
-  0&    0&      in middle of sequence&  -\\
-  1&    1&      in middle of sequence&  -\\
-  1&    0&      Tail of sequence&   $-A \cdot 2^i$\\
-  0&    1&      Head of sequence&   $+A \cdot 2^i$\\
-  \hline
-\end{tabular}
-\end{center}
-\subparagraph{Example}
+% \subsection{Booth algorithm}
+% Two consecutive digits are analyzed at the same time, in particular we notice that:
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|}
+%   \hline
+%   $x_i$&  $x_{i+1}$&  What they represent&  Operation to be performed\\
+%   \hline
+%   0&    0&      in middle of sequence&  -\\
+%   1&    1&      in middle of sequence&  -\\
+%   1&    0&      Tail of sequence&   $-A \cdot 2^i$\\
+%   0&    1&      Head of sequence&   $+A \cdot 2^i$\\
+%   \hline
+% \end{tabular}
+% \end{center}
+% \subparagraph{Example}
 
-Again we start from 15 whose binary representation is "00111". In LSB a dummy zero is inserted to recognize the tail of sequence of ones. We are shifting the window (| |) one position to the left by the time, windows of consecutive steps are overlapping.
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-  \hline
-  Step (i)& & & & & & & & Operation to be performed\\
-  \hline
-    0&    0&    0&  1&  1&  1&  |1& 0|&   $-A$\\
-    1&    0&    0&  1&  1&  |1&  1|&  0&    nop\\
-    2&    0&    0&  1&  |1&   1|&  1& 0&    nop\\
-    3&    0&    0&  |1& 1|&   1&   1& 0&    nop\\
-    1&    0&    |0& 1|& 1&    1&   1& 0&    $+A \cdot 2^4$\\
-  \hline
-\end{tabular}
-\end{center}
-Since in MSB positions we have only zeros no further operations have to be performed. Actually we can apply this algorithm also to numbers like "0010" resulting in $"01\overline{1}0"$. This is an interactive algorithm, so by looking at more than two-bit at the same time to speed up the executions. This approach leads to radix-4 version whose truth table is the following:
-\begin{center}
-\begin{tabular}{|c|c|c|c|c|}
+% Again we start from 15 whose binary representation is "00111". In LSB a dummy zero is inserted to recognize the tail of sequence of ones. We are shifting the window (| |) one position to the left by the time, windows of consecutive steps are overlapping.
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+%   \hline
+%   Step (i)& & & & & & & & Operation to be performed\\
+%   \hline
+%     0&    0&    0&  1&  1&  1&  |1& 0|&   $-A$\\
+%     1&    0&    0&  1&  1&  |1&  1|&  0&    nop\\
+%     2&    0&    0&  1&  |1&   1|&  1& 0&    nop\\
+%     3&    0&    0&  |1& 1|&   1&   1& 0&    nop\\
+%     1&    0&    |0& 1|& 1&    1&   1& 0&    $+A \cdot 2^4$\\
+%   \hline
+% \end{tabular}
+% \end{center}
+% Since in MSB positions we have only zeros no further operations have to be performed. Actually we can apply this algorithm also to numbers like "0010" resulting in $"01\overline{1}0"$. This is an interactive algorithm, so by looking at more than two-bit at the same time to speed up the executions. This approach leads to radix-4 version whose truth table is the following:
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|c|}
 
 \subsection{Flag}
 Often we also need to generate some flags.
