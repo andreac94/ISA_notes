@@ -1,6 +1,7 @@
-\documentclass[a4paper,10pt]{report}
+\documentclass[a4paper,11pt]{book}
 
 %%%%%%%%%%%%%%%%%   PKG    %%%%%%%%%%%%%%%%%
+%Per gli accenti
 \usepackage[utf8]{inputenc}     %nel caso di Windows;
 \usepackage{fancyhdr}       %Per personalizzare lo stile della pagina
 \usepackage{vmargin}
@@ -10,15 +11,8 @@
 \usepackage{listings}
 \usepackage{textcomp}
 \usepackage[italian]{babel}
+% All the packages and set-up are in the 210Header.sty file, loaded by the following command.
 
-% modify chapter top spacing
-\usepackage{titlesec}
-\titleformat{\chapter}[display]
-{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge}   
-\titlespacing*{\chapter}{00pt}{-60pt}{15pt}
-
-% All the packages and set-up are in the 210Header.sty file,
-%loaded by the following command.
 
 %\usepackage[T1]{fontenc}
 %\usepackage{textcomp} %Per scrivere i gradi cent
@@ -62,10 +56,10 @@
 \renewcommand{\headrulewidth}{0.2 pt}
 \renewcommand{\footrulewidth}{0.2 pt}
 
-\textwidth 17 truecm
+\textwidth 14.5 truecm
 %\textheight 24truecm
-\oddsidemargin 20mm
-\evensidemargin 20mm
+\oddsidemargin 25mm
+\evensidemargin 45mm
 
 \begin{document}
 
@@ -93,11 +87,12 @@
 %\titleGM
 \tableofcontents
 
-\subimport{../}{ch_01}
-\subimport{../}{add}
-\subimport{../}{mult}
-\subimport{../}{div}
-\subimport{../}{fp}
-\subimport{../}{ch_03}
+% \subimport{../}{01-opt}
+% \subimport{../}{02-add}
+% \subimport{../}{03-mult}
+% \subimport{../}{04-div}
+% \subimport{../}{05-fp}
+\subimport{../}{06-mips}
+\subimport{../}{07-superscalar}
 
  \end{document}
