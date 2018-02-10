@@ -1,4 +1,4 @@
-\documentclass[a4paper,11pt]{book}
+\documentclass[a4paper,10pt]{report}
 
 %%%%%%%%%%%%%%%%%   PKG    %%%%%%%%%%%%%%%%%
 %Per gli accenti
@@ -9,7 +9,9 @@
 \usepackage{tikz}
 \usepackage{subfig}
 \usepackage{listings}
+\usepackage{array}
 \usepackage{textcomp}
+\usepackage{multirow}
 \usepackage[italian]{babel}
 % All the packages and set-up are in the 210Header.sty file, loaded by the following command.
 
@@ -56,43 +58,36 @@
 \renewcommand{\headrulewidth}{0.2 pt}
 \renewcommand{\footrulewidth}{0.2 pt}
 
-\textwidth 14.5 truecm
+\textwidth 18.0 truecm
 %\textheight 24truecm
-\oddsidemargin 25mm
-\evensidemargin 45mm
+\oddsidemargin 15mm
+\evensidemargin 15mm
 
 \begin{document}
 
-\hbox{ % Horizontal box
-  \hspace*{0.15\textwidth} % Whitespace to the left of the title page
-  \thispagestyle{empty}
-  \rule{2pt}{\textheight} % Vertical line
-  \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
-  \parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
+% \hbox{ % Horizontal box
+%   \hspace*{0.15\textwidth} % Whitespace to the left of the title page
+%   \thispagestyle{empty}
+%   \rule{2pt}{\textheight} % Vertical line
+%   \hspace*{0.05\textwidth} % Whitespace between the vertical line and title page text
+%   \parbox[b]{0.75\textwidth}{ % Paragraph box which restricts text to less than the width of the page
 
-    {\noindent\Huge\bfseries Integrated system\\ \\ architecture}\\[1.5\baselineskip] % Title
-    {\large \textit{Guido Masera}}\\[2\baselineskip] % Tagline or further description
-    {\large \textsc{Lectures notes\\ \\\textit{Author: Erica Raviola}}} % Author name
-    \vspace{0.05\textheight} % Whitespace between the title block and the publisher
-    % \begin{center}
-    %   \includegraphics[width=0.9\linewidth]{ha}
-    % \end{center}
-
-    \vspace{0.18\textheight} % Whitespace between the title block and the publisher
-    {\noindent January 2017 }\\[\baselineskip] % Publisher and logo
-    }}
-
-
-
+%     {\noindent\Huge\bfseries Integrated system\\ \\ architecture}\\[1.5\baselineskip] % Title
+%     {\large \textit{Guido Masera}}\\[2\baselineskip] % Tagline or further description
+%     {\large \textsc{Lectures notes\\ \\\textit{Author: Erica Raviola}}} % Author name
+%     % \begin{center}
+%     %   \includegraphics[width=0.9\linewidth]{ha}
+%     % \end{center}
+%     \vspace{0.18\textheight} % Whitespace between the title block and the publisher
+%     {\noindent January 2018 }\\[\baselineskip] % Publisher and logo
+%     }}
 %\titleGM
 \tableofcontents
-
-% \subimport{../}{01-opt}
-% \subimport{../}{02-add}
-% \subimport{../}{03-mult}
-% \subimport{../}{04-div}
-% \subimport{../}{05-fp}
+\subimport{../}{01-opt}
+\subimport{../}{02-add}
+\subimport{../}{03-mult}
+\subimport{../}{04-div}
+\subimport{../}{05-fp}
 \subimport{../}{06-mips}
 \subimport{../}{07-superscalar}
-
  \end{document}
